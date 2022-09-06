@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { DocumentData } from 'firebase/firestore';
 
 interface MessageProps {
@@ -10,5 +10,5 @@ export const Message = (props: MessageProps) => {
     <div>
       <p>{props.message.text}</p>
     </div>
-  )
-}
+  );
+};

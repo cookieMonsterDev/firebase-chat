@@ -1,5 +1,3 @@
-import React from 'react';
-import './App.css';
 import { ChatRoom } from './components/ChatRoom/ChatRoom';
 
 import { auth } from './helpers/dataBase';
@@ -8,22 +6,32 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavBar } from './components/NavBar/NavBar';
 import { SendMessage } from './components/ChatRoom/SendMessage';
 
-const App = () => {
+import styled from '@emotion/styled';
 
+const App = () => {
   const [user] = useAuthState(auth);
 
-  // console.log(auth.currentUser)
-
   return (
-    <div className="App">
+    <Wrapper>
       <NavBar />
       {user && <ChatRoom />}
       {user && <SendMessage />}
-    </div>
+    </Wrapper>
   );
-}
+};
 
 export default App;
 
+const Wrapper = styled.div`
+  box-sizing: border-box;
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
 
+  font-family: 'Press Start 2P', sans-serif;
 
+  background-color: red;
+`;

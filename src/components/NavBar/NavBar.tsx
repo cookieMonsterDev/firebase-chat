@@ -4,7 +4,6 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 
 export const NavBar = () => {
-  
   const [user] = useAuthState(auth);
 
   const googleSignIn = () => {
@@ -12,16 +11,16 @@ export const NavBar = () => {
     signInWithPopup(auth, provider);
   };
 
-  if(!user) {
+  if (!user) {
     return (
       <div>
-        <button onClick={googleSignIn}>Sign in</button>  
+        <button onClick={googleSignIn}>Sign in</button>
       </div>
-    )
-  }
-  else return (
-    <div>
-      <button onClick={() => signOut(auth)}>Sign Out</button>  
-    </div>
-  )
-}
+    );
+  } else
+    return (
+      <div>
+        <button onClick={() => signOut(auth)}>Sign Out</button>
+      </div>
+    );
+};
