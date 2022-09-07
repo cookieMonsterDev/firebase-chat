@@ -1,26 +1,33 @@
-import React from 'react';
 import { auth } from '../../helpers/dataBase';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import { signOut } from 'firebase/auth';
+import styled from '@emotion/styled';
 
 export const NavBar = () => {
   const [user] = useAuthState(auth);
 
-  const googleSignIn = () => {
-    const provider = new GoogleAuthProvider();
-    signInWithPopup(auth, provider);
-  };
+  const handleClick = () => {
+    user ? signOut(auth) : console.log('nothing')
+  }
 
-  if (!user) {
     return (
-      <div>
-        <button onClick={googleSignIn}>Sign in</button>
-      </div>
-    );
-  } else
-    return (
-      <div>
-        <button onClick={() => signOut(auth)}>Sign Out</button>
-      </div>
+      <Container>
+        {user && <button onClick={handleClick}>Sign Out</button>}
+      </Container>
     );
 };
+
+const Container = styled.div`
+  display: flex;
+  width: 100%;
+  height: 5rem;
+  margin: 0;
+  background-color: purple;
+
+  @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    height: 8rem;
+  }
+`;
