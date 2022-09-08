@@ -25,31 +25,27 @@ const App = () => {
 export default App;
 
 const Wrapper = styled.div`
-  position: absolute;
-  display: flex;
   justify-content: center;
+  align-items: center;
+  position: absolute;
   overflow: hidden;
-
-  width: 100%;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
   left: 0;
-  top: 2rem;
-
-  @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
-    top: 0;
-  }
+  top: 0;
 `;
 
 const AppWrapper = styled.div`
+  position: relative;
   width: 60rem;
   height: 60rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  border: 3px solid black;
+  border: 1px solid black;
   box-sizing: border-box;
+  border-radius: 3rem;
 
   @media only screen 
   and (min-device-width: 320px) 
