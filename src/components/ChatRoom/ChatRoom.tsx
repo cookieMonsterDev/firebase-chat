@@ -55,6 +55,7 @@ const Container = styled.div`
 
 const MessagesWrapper = styled.div`
   height: 48rem;
+  overflow: auto; 
 
   @media only screen 
   and (min-device-width: 320px) 

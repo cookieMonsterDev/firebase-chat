@@ -5,7 +5,6 @@ import { db, auth } from '../../helpers/dataBase';
 import styled from '@emotion/styled';
 
 export const SendMessage = () => {
-  const ref = useRef<HTMLInputElement | null>(null);
   const user = useRef<User | null>(auth.currentUser);
   const [message, setMessage] = useState('');
 
