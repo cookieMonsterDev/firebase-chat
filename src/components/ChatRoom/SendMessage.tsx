@@ -20,6 +20,7 @@ export const SendMessage = () => {
         name: user.current?.displayName,
         uid: user.current?.uid,
         timestamp: serverTimestamp(),
+        photoURL: user.current?.photoURL
       });
       setMessage('');
     }
