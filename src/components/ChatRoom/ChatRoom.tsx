@@ -4,9 +4,8 @@ import {
   onSnapshot,
   orderBy,
   query,
-  QuerySnapshot,
 } from 'firebase/firestore';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { db } from '../../helpers/dataBase';
 import { Message } from './Message';
 import { SendMessage } from './SendMessage';

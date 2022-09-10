@@ -16,7 +16,7 @@ export const NavBar = () => {
       <MennButtonWrapper>
         <BurgerMenu />
       </MennButtonWrapper>
-      {user && <button onClick={handleClick}>Sign Out</button>}
+      {/* {user && <button onClick={handleClick}>Sign Out</button>} */}
     </Container>
   );
 };

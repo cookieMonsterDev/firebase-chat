@@ -8,7 +8,7 @@ export const SendMessage = () => {
   const user = useRef<User | null>(auth.currentUser);
   const [message, setMessage] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
   };
 
@@ -28,28 +28,25 @@ export const SendMessage = () => {
 
   return (
     <SendMessageWrapper>
-      <form onSubmit={handleSubmit}>
-      <input 
+      <Form onSubmit={handleSubmit}>
+      <Textarea
         onChange={handleChange} 
         placeholder="message" 
         value={message}
-        type='text'/>
-      <button>Send</button>
-    </form>  
+      />
+      <Button>Send</Button>
+    </Form>  
     </SendMessageWrapper>
   );
 };
 
 const SendMessageWrapper = styled.div`
-  position: absolute;
-  bottom: 0;
   display: flex;
   width: 100%;
-  height: 6rem;
+  min-height: 6rem;
   border-radius: 0 0 3rem 3rem;
   align-items: center;
   justify-content: space-around;
-
 
   background: linear-gradient(109.6deg, rgb(229, 68, 121) 11.2%, rgb(157, 55, 206) 91.2%);;
 
@@ -61,4 +58,37 @@ const SendMessageWrapper = styled.div`
     height: 8vh;
     width: 100vw;
   }
+`;
+
+const Form = styled.form`
+  width: 55rem;
+  display: grid;
+  grid-template-columns: 48rem 7rem;
+`;
+
+const Textarea = styled.textarea`
+  display: flex;
+  width: 48rem;
+  min-height: 2.5rem;
+  max-height: 10rem;
+  border: none;
+  outline: none;
+  border-radius: 1rem 0 0 1rem;
+  padding: 0.5rem;
+  font-family: Nunito;
+  font-size: 1rem;
+`;
+
+const Button = styled.button`
+  padding: 0;
+
+  font-size: 1.5rem;
+  font-family: Nunito;
+  font-weight: 600;
+
+  border: none;
+  border-radius: 0 1rem 1rem 0;
+
+  color: white;
+  background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
 `;
