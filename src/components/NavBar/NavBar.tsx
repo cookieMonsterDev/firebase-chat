@@ -3,6 +3,8 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import styled from '@emotion/styled';
 import { BurgerMenu } from './components/BurgerMenu';
+import { Menu } from './components/Menu';
+import { MenuProvider } from './components/menuContext';
 
 export const NavBar = () => {
   const [user] = useAuthState(auth);
@@ -12,16 +14,20 @@ export const NavBar = () => {
   };
 
   return (
-    <Container>
-      <MennButtonWrapper>
-        <BurgerMenu />
-      </MennButtonWrapper>
-      {/* {user && <button onClick={handleClick}>Sign Out</button>} */}
-    </Container>
+    <MenuProvider>
+      <Container>
+        <MennButtonWrapper>
+          <BurgerMenu />
+        </MennButtonWrapper>
+        {/* {user && <button onClick={handleClick}>Sign Out</button>} */}
+        <Menu />
+      </Container>
+    </MenuProvider>
   );
 };
 
 const Container = styled.div`
+  overflow: hidden;
   display: flex;
   width: 60rem;
   height: 6rem;

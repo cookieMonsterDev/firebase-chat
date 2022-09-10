@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { auth } from '../../../helpers/dataBase'
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useUpdateMenu } from './menuContext';
 
 interface BurgerStyles {
   isOn?: boolean;
@@ -13,9 +14,11 @@ export const BurgerMenu = () => {
 
   const [user] =  useAuthState(auth);
   const [checked, setChecked] = useState(false);
+  const updateMenuState = useUpdateMenu();
 
   const handleClick = () => {
     setChecked(prev => !prev);
+    updateMenuState();
   }
 
   return (

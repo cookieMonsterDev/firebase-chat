@@ -24,7 +24,6 @@ const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: absolute;
-  overflow: hidden;
   display: flex;
   height: 100vh;
   width: 100vw;
@@ -34,6 +33,7 @@ const Wrapper = styled.div`
 
 const AppWrapper = styled.div`
   position: relative;
+  overflow: hidden;
   width: 60rem;
   height: 60rem;
   display: grid;
