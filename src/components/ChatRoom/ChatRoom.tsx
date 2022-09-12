@@ -29,9 +29,10 @@ export const ChatRoom = () => {
   return (
     <Container>
       <MessagesWrapper>
-        {messages && messages.map((item: DocumentData) => (
-          <Message key={item.id} message={item} />
-        ))}
+        {messages &&
+          messages.map((item: DocumentData) => (
+            <Message key={item.id} message={item} />
+          ))}
       </MessagesWrapper>
       <SendMessage />
     </Container>
@@ -44,22 +45,16 @@ const Container = styled.div`
   height: 54rem;
   display: grid;
 
-  @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
     height: 94vh;
   }
 `;
 
 const MessagesWrapper = styled.div`
   height: 48rem;
-  overflow: auto; 
+  overflow: auto;
 
-  @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
     height: 86vh;
   }
 `;

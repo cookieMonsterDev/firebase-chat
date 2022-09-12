@@ -20,7 +20,7 @@ export const SendMessage = () => {
         name: user.current?.displayName,
         uid: user.current?.uid,
         timestamp: serverTimestamp(),
-        photoURL: user.current?.photoURL
+        photoURL: user.current?.photoURL,
       });
       setMessage('');
     }
@@ -29,13 +29,13 @@ export const SendMessage = () => {
   return (
     <SendMessageWrapper>
       <Form onSubmit={handleSubmit}>
-      <Textarea
-        onChange={handleChange} 
-        placeholder="message" 
-        value={message}
-      />
-      <Button>Send</Button>
-    </Form>  
+        <Textarea
+          onChange={handleChange}
+          placeholder="message"
+          value={message}
+        />
+        <Button>Send</Button>
+      </Form>
     </SendMessageWrapper>
   );
 };
@@ -48,12 +48,13 @@ const SendMessageWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
 
-  background: linear-gradient(109.6deg, rgb(229, 68, 121) 11.2%, rgb(157, 55, 206) 91.2%);;
+  background: linear-gradient(
+    109.6deg,
+    rgb(229, 68, 121) 11.2%,
+    rgb(157, 55, 206) 91.2%
+  );
 
-  @media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+  @media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
     border-radius: 0;
     height: 8vh;
     width: 100vw;
