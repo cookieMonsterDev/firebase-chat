@@ -1,4 +1,4 @@
-# Real-time-chat
+# FireBase-chat
 
 Just the Real-time-chat base on firebase)
 
